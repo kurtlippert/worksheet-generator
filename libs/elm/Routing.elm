@@ -2,12 +2,14 @@ module Routing exposing (..)
 
 import Navigation exposing (Location)
 import Players.Models exposing (PlayerId)
+import Etls.Models exposing (..)
 import UrlParser exposing (..)
 
 
 type Route
     = PlayersRoute
     | PlayerRoute PlayerId
+    | EtlRoute
     | NotFoundRoute
 
 
@@ -17,6 +19,7 @@ matchers =
         [ map PlayersRoute top
         , map PlayerRoute (s "players" </> string)
         , map PlayersRoute (s "players")
+        , map EtlRoute (s "etls")
         ]
 
 

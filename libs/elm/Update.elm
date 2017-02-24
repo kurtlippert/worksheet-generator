@@ -16,6 +16,9 @@ update msg model =
             in
                 ( { model | players = updatedPlayers }, Cmd.map PlayersMsg cmd )
 
+        EtlsMsg subMsg ->
+            let
+
         OnLocationChange location ->
             let
                 newRoute =

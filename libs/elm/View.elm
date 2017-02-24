@@ -8,7 +8,8 @@ import Players.List
 import Players.Models exposing (PlayerId)
 import Routing exposing (Route(..))
 
-import Etls.
+import Etls.List
+import Etls.Models exposing ()
 
 
 view : Model -> Html Msg
@@ -27,7 +28,7 @@ page model =
             playerEditPage model id
 
         EtlRoute ->
-            Html.map EtlMsg
+            Etls.List.view
 
         NotFoundRoute ->
             notFoundView
