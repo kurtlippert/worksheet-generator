@@ -1,39 +1,52 @@
 {
-  "players": [
+  "etls": [
     {
       "id": "1",
-      "name": "Sally",
-      "level": 2
+      "checked": false,
+      "fileName": "file1",
+      "fileSize": "4 KB",
+      "Modified": "2/14/2017 8:01:06 AM",
+      "Created": "2/21/2017 1:44:29 PM"
     },
     {
       "id": "2",
-      "name": "Lance",
-      "level": 5
+      "checked": false,
+      "fileName": "file2",
+      "fileSize": "8 KB",
+      "Modified": "2/15/2017 9:01:06 AM",
+      "Created": "2/20/2017 2:44:29 PM"
     },
     {
       "id": "3",
-      "name": "Aki",
-      "level": 3
+      "checked": false,
+      "fileName": "file3",
+      "fileSize": "16 KB",
+      "Modified": "3/14/2017 10:01:06 AM",
+      "Created": "4/21/2017 3:44:29 PM"
     },
     {
       "id": "4",
-      "name": "Maria",
-      "level": 4
+      "checked": false,
+      "fileName": "file4",
+      "fileSize": "24 KB",
+      "Modified": "5/14/2017 c:01:06 AM",
+      "Created": "6/21/2017 1:44:29 PM"
     },
     {
       "id": "5",
-      "name": "Julio",
-      "level": 1
+      "checked": false,
+      "fileName": "file5",
+      "fileSize": "4 KB",
+      "Modified": "2/14/2017 8:01:06 AM",
+      "Created": "2/21/2017 1:44:29 PM"
     },
     {
       "id": "6",
-      "name": "Julian",
-      "level": 1
-    },
-    {
-      "id": "7",
-      "name": "Jaime",
-      "level": -1
+      "checked": false,
+      "fileName": "file6",
+      "fileSize": "144 KB",
+      "Modified": "2/14/2017 8:01:06 AM",
+      "Created": "2/21/2017 1:44:29 PM"
     }
   ]
 }

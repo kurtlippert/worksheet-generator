@@ -1,0 +1,85 @@
+TRX_TYPE_SORT,TRX_TYPE,TRX_TYPE_DESCRIPTION,IS_TB_TRX_TYPE_01,CS_TB_AMOUNT_TYPE,TRX_CODE_SORT,TRX_CODE,DESCRIPTION,TB_AMOUNT,TRX_DATE,NET_AMOUNT,GUEST_LED_DEBIT,GUEST_LED_CREDIT,AR_LED_DEBIT,AR_LED_CREDIT,DEP_LED_DEBIT,DEP_LED_CREDIT,PACKAGE_LED_DEBIT,PACKAGE_LED_CREDIT,INH_DEBIT,INH_CREDIT,NON_REVENUE_AMT,TODAYS_ACCRUALS,DEPOSIT_AT_CHECKIN,PACKAGE_LED_TAX,DEP_TAX_LED_DEBIT,OWNER_LED_DEBIT,OWNER_LED_CREDIT,CS_CURRENCY_COUNT,C_TRX_CODE,C_RESORT,C_TRX_DATE,C_TB_AMOUNT_NET,C_DISP_CURRENCY,C_GUEST_LED_CREDIT,C_GL_DISP_CURRENCY,C_AR_LED_CREDIT,C_AR_DISP_CURRENCY,C_DEP_LED_CREDIT,C_DL_DISP_CURRENCY,C_INH_LED_CREDIT,C_IH_DISP_CURRENCY,C_OWNER_LED_CREDIT,C_OWNER_DISP_CURRENCY
+1,REVENUE,Revenue,1,37568.95,                1000,1000,*Accommodation,30287.57,24-SEP-16,30287.57,30287.57,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2000,2000,Edgar's H Rest Breakfast,1549.5,24-SEP-16,1549.5,1549.5,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2001,2001,Edgar's H Rest Beer,45,24-SEP-16,45,45,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2010,2010,Edgar's H Rest Breakfast - Adj,-672.5,24-SEP-16,-672.5,-672.5,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2020,2020,Edgar's H Rest Lunch,283.7,24-SEP-16,283.7,283.7,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2021,2021,Edgar's H Rest Wine,22,24-SEP-16,22,22,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2030,2030,Edgar's H Rest Lunch - Adj,-124.5,24-SEP-16,-124.5,-124.5,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2060,2060,Edgar's H Rest Dinner,781.26,24-SEP-16,781.26,781.26,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2061,2061,Edgar's H Rest Liquor,98,24-SEP-16,98,98,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2070,2070,Edgar's H Rest Dinner - Adj,-15,24-SEP-16,-15,-15,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2300,2300,Edgar's H Lounge Charge,0,24-SEP-16,0,0,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2301,2301,Edgar's H Lounge Beer,212,24-SEP-16,212,212,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2311,2311,Edgar's H Lounge Beer-Adj,-10,24-SEP-16,-10,-10,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2321,2321,Edgar's H Lounge Wine,127,24-SEP-16,127,127,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2331,2331,Edgar's H Lounge Wine-Adj,-18,24-SEP-16,-18,-18,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2361,2361,Edgar's H Lounge Liquor,414,24-SEP-16,414,414,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2371,2371,Edgar's H Lounge Liquor-Adj,-16,24-SEP-16,-16,-16,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                2900,2900,Edgar's H Charge,0,24-SEP-16,0,0,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3000,3000,Buffalo Bayou Breakfast,228.1,24-SEP-16,228.1,228.1,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3010,3010,Buffalo Bayou Breakfast- Adj,-41,24-SEP-16,-41,-41,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3800,3800,Room Service Breakfast,201.77,24-SEP-16,201.77,201.77,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3820,3820,Room Service Lunch,273.27,24-SEP-16,273.27,273.27,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3840,3840,Room Service Dinner,42.95,24-SEP-16,42.95,42.95,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3841,3841,Room Service Liquor,70,24-SEP-16,70,70,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3880,3880,Room Service Charge,0,24-SEP-16,0,0,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3900,3900,Buffalo Bayou Charge,0,24-SEP-16,0,0,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                3940,3940,Buffalo Bayou Grat-Adj,-3,24-SEP-16,-3,-3,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4400,4400,Part&Parcel Bar-Charge,0,24-SEP-16,0,0,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4401,4401,Part & Parcel Beer,371,24-SEP-16,371,371,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4411,4411,Part&Parcel Beer-Adj,-30,24-SEP-16,-30,-30,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4421,4421,Part & Parcel Wine,121,24-SEP-16,121,121,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4460,4460,Part & Parcel Dinner,196,24-SEP-16,196,196,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4461,4461,Part & Parcel Liquor,1273.26,24-SEP-16,1273.26,1273.26,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4470,4470,Part&Parcel Dinner-Adj,-46,24-SEP-16,-46,-46,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4471,4471,Part&Parcel Liquor-Adj,-132.91,24-SEP-16,-132.91,-132.91,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4500,4500,Local Call,.5,24-SEP-16,.5,.5,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4501,4501,Long Distance,4.28,24-SEP-16,4.28,4.28,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4601,4601,Miscellaneous Other,28.26,24-SEP-16,28.26,28.26,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                4943,4943,Part&Parcel-Gratuity -Adj,-18.89,24-SEP-16,-18.89,-18.89,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                5104,5104,Visitor Parking,105.33,24-SEP-16,105.33,105.33,,0,,0,,,,0,0,0,0,,0,0,0,,0
+1,REVENUE,Revenue,1,37568.95,                5105,5105,Parking,1961,24-SEP-16,1961,1961,,0,,0,,,,0,0,0,0,,0,0,0,,0
+2,PAID OUT,Paid Out,1,4.11,                8000,8000,Paid Out,4.11,24-SEP-16,4.11,4.11,,0,,0,,,,0,0,4.11,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2902,2902,Edgar's H 1-Beverage Tax,227.56,24-SEP-16,227.56,227.56,,0,,0,,,,0,0,227.56,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2912,2912,Edgar's H 1-Bev Tax Adj.,-3.63,24-SEP-16,-3.63,-3.63,,0,,0,,,,0,0,-3.63,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2930,2930,Edgar's H - Gratuity,1050.98,24-SEP-16,1050.98,1050.98,,0,,0,,,,0,0,1050.98,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2940,2940,Edgar's H - Gratuity-Adj,-92,24-SEP-16,-92,-92,,0,,0,,,,0,0,-92,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2950,2950,Edgar's H - Tax,283.58,24-SEP-16,283.58,283.58,,0,,0,,,,0,0,283.58,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                2960,2960,Edgar's H - Tax-Adj,-67.01,24-SEP-16,-67.01,-67.01,,0,,0,,,,0,0,-67.01,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                3960,3960,Buffalo Bayou Tax- Adj,-3.38,24-SEP-16,-3.38,-3.38,,0,,0,,,,0,0,-3.38,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                4963,4963,Part&Parcel-Tax-Adj,-3.8,24-SEP-16,-3.8,-3.8,,0,,0,,,,0,0,-3.8,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                4964,4964,Part&Parcel-Bev Tax-Adj,-14.62,24-SEP-16,-14.62,-14.62,,0,,0,,,,0,0,-14.62,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7100,7100,State Tax,1351.44,24-SEP-16,1351.44,1351.44,,0,,0,,,,0,0,1351.44,0,,,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7101,7101,City Tax,1977.35,24-SEP-16,1977.35,1977.35,,0,,0,,,,0,0,1977.35,0,,,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7102,7102,County Tax,564.97,24-SEP-16,564.97,564.97,,0,,0,,,,0,0,564.97,0,,,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7103,7103,County Sports Tax,564.97,24-SEP-16,564.97,564.97,,0,,0,,,,0,0,564.97,0,,,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7104,7104,Parking Tax,170.75,24-SEP-16,170.75,170.75,,0,,0,,,,0,0,170.75,0,,0,0,0,,0
+3,NON REVENUE,Non Revenue,1,5930.84,                7200,7200,State Tax - Adj,-76.32,24-SEP-16,-76.32,-76.32,,0,,0,,,,0,0,-76.32,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9000,9000,Cash,-1140.42,24-SEP-16,0,,-954.53,0,,,-185.89,,,0,0,1140.42,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9002,9002,Direct Billing/City Ledger,-333.45,24-SEP-16,0,0,-333.45,333.45,,,,,,0,0,0,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9003,9003,American Express,-5172.1,24-SEP-16,0,,-5172.1,0,,,,,,0,0,5172.1,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9004,9004,Visa,-9224.27,24-SEP-16,0,,-9224.27,0,,,,,,0,0,9224.27,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9005,9005,MasterCard,-15673.66,24-SEP-16,0,,-12957.95,0,,,-2715.71,,,0,0,15673.66,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9007,9007,Discover,-228.05,24-SEP-16,0,,-228.05,0,,,,,,0,0,228.05,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9300,9300,POS - Cash / Check,-776.59,24-SEP-16,0,,-776.59,0,,,,,,0,0,776.59,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9303,9303,POS- American Express,-205.56,24-SEP-16,0,,-205.56,0,,,,,,0,0,205.56,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9304,9304,POS - Visa,-1777.6,24-SEP-16,0,,-1777.6,0,,,,,,0,0,1777.6,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9305,9305,POS - MasterCard,-471.73,24-SEP-16,0,,-471.73,0,,,,,,0,0,471.73,0,,0,0,0,,0
+4,PAYMENT,Payment,1,-35119.11,                9307,9307,POS - Discover,-115.68,24-SEP-16,0,,-115.68,0,,,,,,0,0,115.68,0,,0,0,0,,0
+5,INTERNAL,Internal,0,0,                8997,8997,Deposit Transfer at Check-In,0,24-SEP-16,0,0,0,0,,3254.58,,,,0,0,3254.58,0,3254.58,0,0,0,,0
+CHK_BAL_CODE,CHK_BAL_VALUE
+CHK_BAL_GUEST_LEDGER,Guest Ledger is in balance
+CHK_BAL_PACKAGE_LEDGER,Package Ledger is in balance
+CHK_BAL_PASSERBY_LEDGER,Passerby Ledger is in balance
+CHK_BAL_DEPOSIT_LEDGER,Deposit Ledger is in balance
+CHK_BAL_AR_LEDGER,A/R Ledger is in balance
+CHK_BAL_CASHIER_BALANCE,Cashiers are in balance
+CHK_BAL_CO_WITH_BALANCE,There are no guests checked out with balance
+CHK_BAL_INVALID_TRANSACTIONS,There are no invalid transactions
+CHK_BAL_EFF_PACKAGE_LEDGER,Effective Package Ledger is in balance
+CHK_BAL_CO_WITH_DEP_BALANCE,There are no guests checked out with deposit balance
+CHK_BAL_DEP_LED_VS_GST_LED,There are no package ledger with guest ledger imbalances
+CHK_BAL_TB_GUEST_LEDGER,No differences found in the guest ledger sections of the trial_balance report
+CS_TB_AMOUNT_REP,CS_GUEST_LED_DEBIT_REP,CS_GUEST_LED_CREDIT_REP,CS_AR_LED_DEBIT_REP,CS_AR_LED_CREDIT_REP,CS_DEPOSIT_LED_DEBIT_REP,CS_DEPOSIT_LED_CREDIT_REP,CS_PACKAGE_LED_DEBIT_REP,CS_PACKAGE_LED_CREDIT_REP,CF_GUEST_LED_REP,CF_AR_LED_REP,CF_DEPOSIT_LED_REP,CF_PACKAGE_LED_REP,CP_GUEST_LED_DEBIT_YEST,CP_GUEST_LED_CREDIT_YEST,CP_AR_LED_DEBIT_YEST,CP_AR_LED_CREDIT_YEST,CP_DEPOSIT_LED_DEBIT_YEST,CP_DEPOSIT_LED_CREDIT_YEST,CP_PACKAGE_LED_DEBIT_YEST,CP_PACKAGE_LED_CREDIT_YEST,CP_TB_BALANCE_YEST,CF_GUEST_LED_YEST,CF_CALC_PREVIOUS_BALANCE,CF_AR_LED_YEST,CF_DEPOSIT_LED_YEST,CF_PACKAGE_LED_YEST,CF_TB_BALANCE_TODAY,CP_INH_DEBIT_YEST,CP_INH_CREDIT_YEST,CF_INH_YEST,CS_INH_DEBIT_REP,CS_INH_CREDIT_REP,CF_INH_REP,CF_FUTURE_ACCRUALS,CF_PACKAGE_LED_TODAY,CP_PACKAGE_ACCRUALS,CF_TBMSG,CS_ACCRUALS_TODAY,CF_BALANCE_TODAY,CS_DEPOSIT_AT_CHECKIN,CF_BAL_CARRIED_FORWARD,CF_DEPOSIT_ACTIVITY_REP,CF_HOTEL_LEDGER_TODAY,CP_PACKAGE_LED_TAX_YEST,CF_LOGO,CS_DEPOSIT_TAX_LED_DEBIT_REP,CS_OWNER_LED_CREDIT_REP,CS_OWNER_LED_DEBIT_REP,CF_OWNER_LED_REP,CP_OWNER_LED_DEBIT_YEST,CP_OWNER_LED_CREDIT_YEST,CF_OWNER_LED_YEST
+8384.79,43503.9,-32217.51,333.45,0,3254.58,-2901.6,0,0,89531.72,88772.31,-25259.67,0,144595874.88,-144514374.97,18331962.87,-18243524.01,13791024.99,-13816637.64,224757.53,-224757.53,81499.91,81499.91,,88438.86,-25612.65,0,89884.7,0,0,0,0,0,0,0,0,0,***Values shown above are preliminary figures of the daily revenues for the unclosed business date. Figures may change once the business date has been closed and the report is re-generated.,0,89531.72,3254.58,89531.72,352.98,153044.36,0,,0,,0,0,0,0,0
