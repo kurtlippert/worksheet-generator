@@ -3,6 +3,13 @@
   "rules": {
     "quotemark": [
       "single"
+    ],
+    "no-trailing-whitespace": false,
+    "semicolon": [
+      true, "never"
+    ],
+    "interface-name": [
+      true, "never-prefix"
     ]
   },
   "jsRules": {

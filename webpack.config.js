@@ -5,8 +5,9 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const PurifyCSSPlugin   = require( 'purifycss-webpack-plugin' );
 const OptimizeCSSPlugin = require( 'optimize-css-assets-webpack-plugin' );
-const CleanDistPlugin   = require( 'clean-webpack-plugin' ); 
-const entryPath         = path.join( __dirname, 'src/static/index.js' );
+const CleanDistPlugin   = require( 'clean-webpack-plugin' );
+const { CheckerPlugin } = require( 'awesome-typescript-loader' );
+const entryPath         = path.join( __dirname, 'src/static/index.ts' );
 const outputPath        = path.join( __dirname, 'dist' );
 
 console.log( 'WEBPACK GO!');
@@ -26,7 +27,14 @@ const commonConfig = {
   },
 
   resolve: {
-    extensions: ['.js', '.ts', '.elm']
+    extensions: ['.js', '.ts', '.elm'],
+    alias: {
+      libs: path.resolve(__dirname, 'libs')
+    }
+  },
+
+  node: {
+    fs: "empty"
   },
 
   module: {
@@ -40,6 +48,10 @@ const commonConfig = {
         test:   /\.svg$/,
         loader: 'file-loader',
       },
+      {
+        test:   /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      }
     ]
   },
 
@@ -49,6 +61,7 @@ const commonConfig = {
       inject:   'body',
       title:    'Onboarding Wizard'
     }),
+    new CheckerPlugin()
   ],
 
 }
