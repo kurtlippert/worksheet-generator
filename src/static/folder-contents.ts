@@ -170,7 +170,7 @@ export const getFiles = (folderPath: string) =>
         ) as File[] | string
 
 //console.log(getFolders("C:\dev\etl-explorer\etl-testbed\ETL"))
-console.log(getFolders(null))
+// console.log(getFolders(null))
 console.log(getFolders("C:\dev\etl-explorer\etl-testbed\ETL"))
 
 //    filepath = normalize(filepath);
