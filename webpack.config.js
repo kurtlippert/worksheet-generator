@@ -23,7 +23,7 @@ const commonConfig = {
   output: {
     path:       outputPath,
     filename:   outputFilename,
-    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/wizard-excel-app/'
+    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/worksheet-generator/'
   },
 
   resolve: {
@@ -59,7 +59,7 @@ const commonConfig = {
     new HtmlWebpackPlugin({
       template: 'src/static/index.template.ejs',
       inject:   'body',
-      title:    'Onboarding Wizard'
+      title:    'Worksheet Generator'
     }),
     new CheckerPlugin()
   ],
