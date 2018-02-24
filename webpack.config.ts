@@ -13,6 +13,7 @@ const outputPath = path.join(__dirname, 'dist')
 
 interface Config extends webpack.Configuration {
   module: {
+    noParse: RegExp,
     rules: webpack.NewUseRule[],
   }
 }
@@ -27,6 +28,7 @@ const vendorCSSName = TARGET_ENV === 'production' ? 'vendor.[contenthash].css' :
 // common webpack config
 const commonConfig: Config = {
   module: {
+    noParse: /\.elm$/,
     rules: [
         {
         test: /\.(png|jpg)$/,
@@ -48,28 +50,18 @@ const commonConfig: Config = {
   output: {
     filename: outputFilename,
     path: outputPath,
-    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/kurt-web/',
+    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/worksheet-generator/',
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'body',
-      // script:
-      //   `<script crossorigin src="https://unpkg.com/react@16/umd/react.${TARGET_ENV}.js"></script>
-      //    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.${TARGET_ENV}.js"></script>`,
       template: 'template.html',
-      title: 'Kurt Lippert',
+      title: 'Worksheet Generator',
     }),
     new CheckerPlugin(),
   ],
   resolve: {
-    alias: {
-      '@Body': path.resolve(__dirname, 'src/Body'),
-      '@Header': path.resolve(__dirname, 'src/Header'),
-      '@Main': path.resolve(__dirname, 'src'),
-      '@libs': path.resolve(__dirname, 'libs'),
-      '@redux': path.resolve(__dirname, 'redux'),
-    },
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.ts', '.elm'],
   },
 }
 
@@ -112,7 +104,12 @@ if (TARGET_ENV === 'development') {
           use: 'style-loader!css-loader?sourceMap',
         },
         {
-          test:   /\.(eot|ttf|woff|woff2|svg)(\?\S*)?$/,
+          exclude: [/elm-stuff/, /node_modules/],
+          loader: 'elm-hot-loader!elm-webpack-loader?verbose=true&warn=true&debug=true',
+          test: /\.elm$/,
+        },
+        {
+          test: /\.(eot|ttf|woff|woff2|svg)(\?\S*)?$/,
           use: 'file-loader',
         },
       ],
@@ -128,9 +125,7 @@ if (TARGET_ENV === 'production') {
   console.log('Building for prod...')
 
   module.exports = merge(commonConfig, {
-    entry: {
-      vendor: ['react', 'react-dom', 'react-dom-factories'],
-    },
+    entry: entryPath,
     module: {
       rules: [
         {
@@ -139,6 +134,11 @@ if (TARGET_ENV === 'production') {
             fallbackLoader: 'style-loader',
             loader: 'css-loader',
           }),
+        },
+        {
+          exclude: [/elm-stuff/, /node_modules/],
+          loader: 'elm-webpack-loader',
+          test: /\.elm$/,
         },
         {
           test: /\.(woff|woff2|ttf|eot)$/,

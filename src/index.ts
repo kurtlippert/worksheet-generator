@@ -1,7 +1,6 @@
-import { render } from 'react-dom'
-import { div } from 'react-dom-factories'
+// get elm
+// tslint:disable-next-line:no-var-requires
+const Elm = require('./Main')
 
-render(
-    div({}, 'Hello World'),
-    document.getElementById('root'),
-)
+// inject the bundled Elm app to div#root
+const app = Elm.Main.embed(document.getElementById('root'))

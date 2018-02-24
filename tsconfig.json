@@ -20,14 +20,6 @@
       "es2015",
       "dom"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "@redux/*": ["redux/*"],
-      "@libs/*": ["libs/*"],
-      "@Main/*": ["src/*"],
-      "@Header/*": ["src/Header/*"],
-      "@Body/*": ["src/Body/*"]
-    }
   },
   "include": [
     "src/**/*"
