@@ -30,9 +30,14 @@ const commonConfig: Config = {
   module: {
     noParse: /\.elm$/,
     rules: [
-        {
-        test: /\.(png|jpg)$/,
-        use: 'url-loader?limit=25000',
+      {
+        test: /\.(png|jpg|gif|)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 25000,
+          },
+        },
       },
       {
         test: /\.svg$/,
@@ -55,7 +60,7 @@ const commonConfig: Config = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'body',
-      template: 'template.html',
+      template: 'src/template.html',
       title: 'Worksheet Generator',
     }),
     new CheckerPlugin(),
@@ -101,12 +106,30 @@ if (TARGET_ENV === 'development') {
       rules: [
         {
           test: /\.css$/i,
-          use: 'style-loader!css-loader?sourceMap',
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
         },
         {
           exclude: [/elm-stuff/, /node_modules/],
-          loader: 'elm-hot-loader!elm-webpack-loader?verbose=true&warn=true&debug=true',
           test: /\.elm$/,
+          use: [
+            'elm-hot-loader',
+            {
+              loader: 'elm-webpack-loader',
+              options: {
+                debug: true,
+                verbose: true,
+                warn: true,
+              },
+            },
+          ],
         },
         {
           test: /\.(eot|ttf|woff|woff2|svg)(\?\S*)?$/,
