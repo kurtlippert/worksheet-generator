@@ -14,3 +14,4 @@
   1. it receives the es5 code with es6 modules so it can tree-shake...
   2. then it transpiles again to es5 and commonjs modules for the browser
 * `tslint` is a tad opinionated and can be modified per liking
+* You'll need to export env var `TS_NODE_PROJECT=tsconfig.webpack.json`
