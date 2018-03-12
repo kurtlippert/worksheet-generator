@@ -90,24 +90,13 @@ const users = (state: State, action: Action): State => {
   }
 }
 
-// view
-// tslint:disable-next-line:variable-name
-// const _home: React.SFC<{ state: State, location: any }> = ({ location }) => {
-// tslint:disable-next-line:variable-name
+// views
 const home = () => {
-  // tslint:disable-next-line:no-console
-  // console.log(location)
   return div({},
     div({}, 'home page'),
   )
 }
 
-// const home = withRouter(
-//   (connect(
-//     (_: State, ownProps: any) => ({ location: ownProps.location }),
-//   )(_home)) as any)
-
-// tslint:disable-next-line:variable-name
 const about = () =>
   div({},
     div({}, 'about page'),
@@ -127,35 +116,14 @@ const about = () =>
     ),
   )
 
-// const about = withRouter((connect()(_about)) as any)
-
-// tslint:disable-next-line:variable-name
 const topics = () =>
   div({},
     div({}, 'topic page'),
   )
 
-// const topics = withRouter((connect()(_topics)) as any)
-
-// root
-// interface ConnectedContainerProps {
-//   state: State
-//   location: any
-// }
-
-// const b: Route<RouteProps> = r(Route, { path: '/', component: home })
-
-// tslint:disable-next-line:no-shadowed-variable
 // tslint:disable-next-line:variable-name
-// tslint:disable-next-line:class-name
-// class _ConnectedContainer extends React.PureComponent {
-  // public render() {
-// tslint:disable-next-line:variable-name
-const _ConnectedContainer: React.SFC<{ state: State, location: any }> = ({ state, location }) => {
-    // tslint:disable-next-line:no-console
-    console.log(location)
-    return div({},
-      // (this.props as any).location.pathname,
+const _ConnectedContainer: React.SFC<{ location: any }> = ({ location }) =>
+    div({},
       location.pathname,
       br({}),
       br({}),
@@ -166,31 +134,20 @@ const _ConnectedContainer: React.SFC<{ state: State, location: any }> = ({ state
           : location.pathname === '/topics'
             ? r(topics)
             : r(home),
-      // r(Switch, {},
-      //   r(Route, { path: '/', component: home }),
-      //   r(Route, { path: '/about', component: about }),
-      //   r(Route, { path: '/topics', component: topics }),
-      // ),
     )
-  }
-// }
 
 const ConnectedContainer = withRouter(
   connect(
-    (state: State, ownProps: any) => ({ state, location: ownProps.location }),
+    (_: State, ownProps: any) => ({ location: ownProps.location }),
   )(_ConnectedContainer) as any)
-
-// const ConnectedContainer = withRouter(_ConnectedContainer as any)
 
 interface RootProps {
   store: Store<State>
 }
 
 // tslint:disable-next-line:no-shadowed-variable
-const Root: React.SFC<RootProps> = ({ store }) => {
-  // tslint:disable-next-line:no-console
-  console.log(store)
-  return r(Provider, { store },
+const Root: React.SFC<RootProps> = ({ store }) =>
+  r(Provider, { store },
     r(Router, {},
       div({ className: style({ marginTop: '10px' }) },
         ul({},
@@ -203,7 +160,6 @@ const Root: React.SFC<RootProps> = ({ store }) => {
       ),
     ),
   )
-}
 
 const epicMiddleware = createEpicMiddleware(fetchUsersEpic, {
   dependencies: {
