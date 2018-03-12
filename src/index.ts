@@ -5,7 +5,7 @@
 import * as React from 'react'
 const r = React.createElement
 import { render } from 'react-dom'
-import { br, div, hr, li, tbody, th, thead, tr, ul } from 'react-dom-factories'
+import { br, div, hr, li, tbody, td, th, thead, tr, ul } from 'react-dom-factories'
 // import { BrowserRouter as Router, NavLink, Route, Switch, withRouter } from 'react-router-dom'
 // import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
@@ -31,14 +31,15 @@ import { withRouter } from 'react-router'
 
 // model
 interface User {
-  firstName: string,
-  lastName: string,
+  id: number,
+  first_name: string,
+  last_name: string,
   avatar: string,
 }
 
 interface State {
   users: User[]
-  location: 'HOME' | 'ABOUT' | 'TOPICS'
+  // location: 'HOME' | 'ABOUT' | 'TOPICS'
   // items: any
   // firstName: string,
   // lastName: string,
@@ -62,20 +63,25 @@ const fetchUsersFulfilled = (payload: User[]): Action => ({
 // update
 // epics
 // https://reqres.in/api/users
+interface UserResponse {
+  data: User[]
+}
+
 interface EpicDependencies {
-  getJSON: (url: string) => Observable<User[]>
+  getJSON: (url: string) => Observable<UserResponse>
 }
 
 export const fetchUsersEpic:
   Epic<Action, Store<State>, EpicDependencies> =
-  (action$, _, { getJSON }) =>
-    action$.ofType('FETCH_USERS')
+  (action$, _, { getJSON }) => {
+    return action$.ofType('FETCH_USERS')
       .mergeMap(() =>
         getJSON('https://reqres.in/api/users?page=1')
-          .map((response) =>
-            fetchUsersFulfilled(response),
+          .map(({ data }) =>
+            fetchUsersFulfilled(data),
           ),
       )
+  }
 
 // reducers
 const users = (state: State, action: Action): State => {
@@ -97,24 +103,35 @@ const home = () => {
   )
 }
 
-const about = () =>
+// tslint:disable-next-line:variable-name
+const _about: React.SFC<{ state: State }> = ({ state }) =>
   div({},
     div({}, 'about page'),
     r(Table, { responsive: true },
       thead({},
         tr({},
           th({}, '#'),
-          th({}, 'heading 1'),
-          th({}, 'heading 2'),
+          th({}, 'First Name'),
+          th({}, 'Last Name'),
+          th({}, 'Avatar'),
         ),
       ),
       tbody({},
-        tr({}, '1'),
-        tr({}, 'item 1'),
-        tr({}, 'item 2'),
+        (state.users as any).map((user: User, index: number) =>
+          tr({ key: user.id },
+            td({}, index),
+            td({}, user.first_name),
+            td({}, user.last_name),
+            td({}, user.avatar),
+          ),
+        ),
       ),
     ),
   )
+
+const about = connect(
+  (state: State) => ({ state }),
+)(_about)
 
 const topics = () =>
   div({},
@@ -168,7 +185,6 @@ const epicMiddleware = createEpicMiddleware(fetchUsersEpic, {
 })
 
 const initialState: State = {
-  location: 'HOME',
   users: [],
 }
 
