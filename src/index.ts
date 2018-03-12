@@ -2,19 +2,32 @@
 // tslint:disable:no-submodule-imports
 
 // react
-import { createElement as r } from 'react'
+import * as React from 'react'
+const r = React.createElement
 import { render } from 'react-dom'
-import { a, br, div } from 'react-dom-factories'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { br, div, hr, li, tbody, th, thead, tr, ul } from 'react-dom-factories'
+// import { BrowserRouter as Router, NavLink, Route, Switch, withRouter } from 'react-router-dom'
+// import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 
 // redux
-import { Provider } from 'react-redux'
+// import { connect, Provider } from 'react-redux'
+import { connect, Provider } from 'react-redux'
 import { applyMiddleware, createStore, Store} from 'redux'
 import { createEpicMiddleware, Epic } from 'redux-observable'
 
 // rxjs
 import { Observable } from 'rxjs'
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/mergeMap'
 import { ajax } from 'rxjs/observable/dom/ajax'
+
+// typestyle
+import { style } from 'typestyle'
+
+// react-bootstrap
+import { Table } from 'react-bootstrap'
+import { withRouter } from 'react-router'
 
 // model
 interface User {
@@ -25,6 +38,7 @@ interface User {
 
 interface State {
   users: User[]
+  location: 'HOME' | 'ABOUT' | 'TOPICS'
   // items: any
   // firstName: string,
   // lastName: string,
@@ -52,7 +66,7 @@ interface EpicDependencies {
   getJSON: (url: string) => Observable<User[]>
 }
 
-export const fetchInitialTicketsEpic:
+export const fetchUsersEpic:
   Epic<Action, Store<State>, EpicDependencies> =
   (action$, _, { getJSON }) =>
     action$.ofType('FETCH_USERS')
@@ -77,58 +91,137 @@ const users = (state: State, action: Action): State => {
 }
 
 // view
-const home = () =>
-  div({},
+// tslint:disable-next-line:variable-name
+// const _home: React.SFC<{ state: State, location: any }> = ({ location }) => {
+// tslint:disable-next-line:variable-name
+const home = () => {
+  // tslint:disable-next-line:no-console
+  // console.log(location)
+  return div({},
     div({}, 'home page'),
-    br({}),
-    r(NavLink, {}, 'goto about'),
-    a({}, 'goto contact'),
   )
+}
 
+// const home = withRouter(
+//   (connect(
+//     (_: State, ownProps: any) => ({ location: ownProps.location }),
+//   )(_home)) as any)
+
+// tslint:disable-next-line:variable-name
 const about = () =>
   div({},
     div({}, 'about page'),
-    br({}),
-    a({}, 'goto home'),
-    a({}, 'goto contact'),
+    r(Table, { responsive: true },
+      thead({},
+        tr({},
+          th({}, '#'),
+          th({}, 'heading 1'),
+          th({}, 'heading 2'),
+        ),
+      ),
+      tbody({},
+        tr({}, '1'),
+        tr({}, 'item 1'),
+        tr({}, 'item 2'),
+      ),
+    ),
   )
 
-const contact = () =>
+// const about = withRouter((connect()(_about)) as any)
+
+// tslint:disable-next-line:variable-name
+const topics = () =>
   div({},
-    div({}, 'contact page'),
-    br({}),
-    a({}, 'goto home'),
-    a({}, 'goto about'),
+    div({}, 'topic page'),
   )
-// container
+
+// const topics = withRouter((connect()(_topics)) as any)
 
 // root
-interface RootProps {
-  store: Store<State>
-}
+// interface ConnectedContainerProps {
+//   state: State
+//   location: any
+// }
 
 // const b: Route<RouteProps> = r(Route, { path: '/', component: home })
 
 // tslint:disable-next-line:no-shadowed-variable
-const Root: React.SFC<RootProps> = ({ store }) =>
-  r(Provider, { store },
+// tslint:disable-next-line:variable-name
+// tslint:disable-next-line:class-name
+// class _ConnectedContainer extends React.PureComponent {
+  // public render() {
+// tslint:disable-next-line:variable-name
+const _ConnectedContainer: React.SFC<{ state: State, location: any }> = ({ state, location }) => {
+    // tslint:disable-next-line:no-console
+    console.log(location)
+    return div({},
+      // (this.props as any).location.pathname,
+      location.pathname,
+      br({}),
+      br({}),
+      location.pathname === '/'
+        ? r(home)
+        : location.pathname === '/about'
+          ? r(about)
+          : location.pathname === '/topics'
+            ? r(topics)
+            : r(home),
+      // r(Switch, {},
+      //   r(Route, { path: '/', component: home }),
+      //   r(Route, { path: '/about', component: about }),
+      //   r(Route, { path: '/topics', component: topics }),
+      // ),
+    )
+  }
+// }
+
+const ConnectedContainer = withRouter(
+  connect(
+    (state: State, ownProps: any) => ({ state, location: ownProps.location }),
+  )(_ConnectedContainer) as any)
+
+// const ConnectedContainer = withRouter(_ConnectedContainer as any)
+
+interface RootProps {
+  store: Store<State>
+}
+
+// tslint:disable-next-line:no-shadowed-variable
+const Root: React.SFC<RootProps> = ({ store }) => {
+  // tslint:disable-next-line:no-console
+  console.log(store)
+  return r(Provider, { store },
     r(Router, {},
-      r(Route, { path: '/', component: home }),
-      r(Route, { path: '/about', component: about }),
-      r(Route, { path: '/contact', component: contact }),
+      div({ className: style({ marginTop: '10px' }) },
+        ul({},
+          li({}, r(NavLink, { to: '/' }, 'Home')),
+          li({}, r(NavLink, { to: '/about' }, 'About')),
+          li({}, r(NavLink, { to: '/topics' }, 'Topics')),
+        ),
+        hr({}),
+        r(ConnectedContainer),
+      ),
     ),
   )
+}
 
-const epicMiddleware = createEpicMiddleware(fetchInitialTicketsEpic, {
+const epicMiddleware = createEpicMiddleware(fetchUsersEpic, {
   dependencies: {
     getJSON: ajax.getJSON,
   },
 })
 
-const store = createStore(users, applyMiddleware(epicMiddleware))
+const initialState: State = {
+  location: 'HOME',
+  users: [],
+}
+
+const store = createStore(users, initialState, applyMiddleware(epicMiddleware))
 
 // render
 render(
   r(Root, { store }),
   document.getElementById('root'),
 )
+
+store.dispatch(fetchUsers())
