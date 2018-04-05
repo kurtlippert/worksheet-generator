@@ -5,7 +5,7 @@
 import * as React from 'react'
 const r = React.createElement
 import { render } from 'react-dom'
-import { br, div, hr, li, tbody, td, th, thead, tr, ul } from 'react-dom-factories'
+import { br, div, hr, img, li, tbody, td, th, thead, tr, ul } from 'react-dom-factories'
 // import { BrowserRouter as Router, NavLink, Route, Switch, withRouter } from 'react-router-dom'
 // import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
@@ -122,7 +122,9 @@ const _about: React.SFC<{ state: State }> = ({ state }) =>
             td({}, index),
             td({}, user.first_name),
             td({}, user.last_name),
-            td({}, user.avatar),
+            td({},
+              img({ src: user.avatar }),
+            ),
           ),
         ),
       ),
